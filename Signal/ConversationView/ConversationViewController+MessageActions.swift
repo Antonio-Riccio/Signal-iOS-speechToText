@@ -117,6 +117,7 @@ extension ConversationViewController: ContextMenuInteractionDelegate {
                     .forward,
                     .edit,
                     .copy,
+                    .transcribeVoiceMessage,
                     .share,
                     .select,
                     .showPaymentDetails,

@@ -1465,6 +1465,9 @@
 /* Context menu button title */
 "CONTEXT_MENU_STOP_SPEAKING_MESSAGE" = "Stop";
 
+/* Context menu button title */
+"CONTEXT_MENU_TRANSCRIBE_VOICE_MESSAGE" = "Transcribe Voice Message";
+
 /* Message for the 'conversation delete confirmation' alert. */
 "CONVERSATION_DELETE_CONFIRMATION_ALERT_MESSAGE" = "This chat will be deleted from all your devices.";
 
@@ -4375,6 +4378,9 @@
 /* Action sheet accessibility label */
 "MESSAGE_ACTION_STOP_SPEAKING_MESSAGE" = "Stop Speaking Message";
 
+/* Message action for transcribing a voice message */
+"MESSAGE_ACTION_TRANSCRIBE_VOICE_MESSAGE" = "Transcribe Voice Message";
+    
 /* Title for message actions for a group invite link. */
 "MESSAGE_ACTION_TITLE_GROUP_INVITE" = "Group Invite";
 
