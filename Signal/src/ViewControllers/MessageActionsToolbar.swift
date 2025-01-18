@@ -24,6 +24,7 @@ public class MessageAction: NSObject {
         case select
         case speak
         case stopSpeaking
+        case transcribeVoiceMessage
         case edit
         case showPaymentDetails
     }
@@ -52,6 +53,8 @@ public class MessageAction: NSObject {
                 return .contextMenuReply
             case .copy:
                 return .contextMenuCopy
+            case .transcribeVoiceMessage:
+                return .contextMenuStopSpeaking // set icon
             case .info:
                 return .contextMenuInfo
             case .delete:

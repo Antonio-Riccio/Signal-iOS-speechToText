@@ -42,7 +42,18 @@ struct MessageActionBuilder {
                                 itemViewModel.copyTextAction()
         })
     }
-
+    
+    static func transcribeVoiceMessage(itemViewModel: CVItemViewModelImpl, delegate: MessageActionsDelegate) -> MessageAction {
+        return MessageAction(.transcribeVoiceMessage,
+                            accessibilityLabel: OWSLocalizedString("MESSAGE_ACTION_TRANSCRIBE_VOICE_MESSAGE", comment: "Action sheet button title"),
+                            accessibilityIdentifier: UIView.accessibilityIdentifier(containerName: "message_action", name: "transcribe_voice_message"),
+                            contextMenuTitle: OWSLocalizedString("CONTEXT_MENU_TRANSCRIBE_VOICE_MESSAGE", comment: "Context menu button title"),
+                            contextMenuAttributes: [],
+                            block: { sender in
+                                itemViewModel.shareMediaAction(sender: sender)
+        })
+    }
+    
     static func showDetails(itemViewModel: CVItemViewModelImpl, delegate: MessageActionsDelegate) -> MessageAction {
         return MessageAction(.info,
                              accessibilityLabel: OWSLocalizedString("MESSAGE_ACTION_DETAILS", comment: "Action sheet button title"),
@@ -163,7 +174,13 @@ class MessageActions: NSObject {
 
         let deleteAction = MessageActionBuilder.deleteMessage(itemViewModel: itemViewModel, delegate: delegate)
         actions.append(deleteAction)
-
+        
+        // controlla se la lingua è supportata 
+        if true {
+                  let transcribeVoiceMessageAction = MessageActionBuilder.transcribeVoiceMessage(itemViewModel: itemViewModel, delegate: delegate)
+                  actions.append(transcribeVoiceMessageAction)
+          }
+        
         if itemViewModel.canCopyOrShareOrSpeakText {
             let copyTextAction = MessageActionBuilder.copyText(itemViewModel: itemViewModel, delegate: delegate)
             actions.append(copyTextAction)
